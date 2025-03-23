@@ -50,9 +50,20 @@ _IP_-адрес:
 
 ## 4. Прикладной уровень
 
+Протоколы прикладного уровня:
 * _HTTP_ - Hypertext Transfer Protocol (передача гипертекста)
 * _HTTPS_ - Hypertext Transfer Protocol Secure
 * _DNS_ - Domain Name System (система доменных имен - определение IP адреса по __доменному имени__)
 * _SMTP_ - Simple Mail Transfer Protocol. Для электронной почты.
 
+## Сводка
 
+Стетвые приложения
+
+__Хост__ - то, где работают сетевые приложения.
+
+_UDP_ - User Datagram Protocol. В UDP есть _broadcast_.
+
+_TCP_ - Transmission Control Protocol. Надежное соединение с варификацией.
+
+![](images/TCP_UDP_meme.png)
