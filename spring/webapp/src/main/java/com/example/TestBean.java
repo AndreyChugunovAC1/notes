@@ -1,8 +1,5 @@
 package com.example;
 
-/**
- * @author Andrey Chugunov
- */
 public class TestBean {
   private String name;
 

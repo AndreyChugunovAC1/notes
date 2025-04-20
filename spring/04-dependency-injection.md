@@ -6,8 +6,8 @@
 
 ## Шаги работы со Spring
 * Создание java-класса
-* Связывание биныов (аннотации/xml)
-* Теперь все объекты берутся из *контейнера Spring*
+* Связывание бинов (аннотации/xml)
+* Теперь все объекты берутся из *контейнера Spring* (= *application context*)
 
 ## Способы внедрения зависимостей
 * Конструктор
@@ -50,6 +50,22 @@ public void setValue(SomeType value) {
 ```
 
 ## Внедрение значений из внешнего файла
+В файле `resources/pusicPlayer.properties` можно указать значения:
+```text
+musicPlayer.volume=100
+musicPlayer.where=Mexico
+```
+В xml осталось указать как именно передавать эти значения:
+```xml
+<context:property-placeholder location="classpath:musicPlayer.properties" />
+
+...
+<bean id="musicPlayer" ...>
+  ...
+  <property name="where" value="${musicPlayer.where}"></property>
+  <property name="volume" value="${musicPlayer.volume}"></property>
+</bean>
+```
 
 
 

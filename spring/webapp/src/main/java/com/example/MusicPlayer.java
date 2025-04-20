@@ -1,16 +1,28 @@
 package com.example;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component("inv player")
 public class MusicPlayer {
   private Music music;
   private String where;
   private int volume;
+  private static int count = 0;
 
   MusicPlayer() {
     music = null;
   }
 
-  MusicPlayer(Music music) {
+  @Autowired
+  MusicPlayer(@Qualifier("inv classic") Music music) {
     this.music = music;
+  }
+ 
+  void initMethod() {
+    ++count;
+    System.out.println("I was initialized #" + count);
   }
 
   public void setMusic(Music music) {

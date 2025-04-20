@@ -69,7 +69,7 @@ class WebForm {
 * *Spring Security* - обезопашивание приложения (аутентификация и тп)
 * Spring Boot - для запуска.
 * Spring Webflow
-* ![другие](spring.io/projects)
+* ![другие](https://spring.io/projects)
 
 
 
