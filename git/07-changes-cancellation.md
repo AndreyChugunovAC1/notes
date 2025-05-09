@@ -7,7 +7,8 @@ git reset HEAD^
 ```
 Перемещает и ветку и `HEAD` назад (насколько указано), как будто текущего коммита никогда и не было:
 
-![](images/after-reset.png)
+|![](images/before-cancellation.png)|>>|![](images/after-reset.png)|
+|-|-|-|
 
 Есть 3 опции для reset:
 1) *soft*: `git reset --soft HEAD^` - переместит, но изменения в случае чего можно будет достать из *индекса*
@@ -20,7 +21,8 @@ git revert HEAD
 ```
 Создает коммит противоположный текущему (с отменой изменений до родителя). На картинке как бы C2'=C1.
 
-![](images/after-revert.png)
+|![](images/before-cancellation.png)|>>|![](images/after-revert.png)|
+|-|-|-|
 
 Если после комманды выше возник конфликт, то его нужно руками разрешить и
 

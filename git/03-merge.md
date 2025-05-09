@@ -3,15 +3,13 @@
 
 **Как это выглядит:**
 
-![](images/before-merge.png)
-
 Мы находимся на ветке main. После комманды:
 ```sh
 git merge bugFix
 ```
-**Получается:**
 
-![](images/after-merge-1.png)
+|![](images/before-merge.png)|>>|![](images/after-merge-1.png)|
+|-|-|-|
 
 То есть сливает ветки тот, кто хочет забрать изменения, а не тот кто хочет их даровать.
 
@@ -20,9 +18,9 @@ git merge bugFix
 git checkout bugFix
 git merge main
 ```
-**Получится:**
 
-![](images/after-merge-2.png)
+|![](images/after-merge-1.png)|>>|![](images/after-merge-2.png)|
+|-|-|-|
 
 В целом, можно было продолжить работать в ветке `bugFix`. И мерджить еще много раз.
 
@@ -36,17 +34,15 @@ git merge main
 git merge --no-ff bugFix
 ```
 
-До fast forward:
+**Простой merge, автоматический fast forward:**
 
-![](images/before-ff.png)
+|![](images/before-ff.png)|>>|![](images/after-ff.png)|
+|-|-|-|
 
-После простого merge (в main):
+**`merge --no-ff`:**
 
-![](images/after-ff.png)
-
-После merge --no-ff:
-
-![](images/after-no-ff.png)
+|![](images/before-ff.png)|>>|![](images/after-no-ff.png)|
+|-|-|-|
 
 Вот так можно запретить fast forward:
 ```sh
