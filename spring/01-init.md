@@ -58,6 +58,7 @@ class WebForm {
 
 ## Как Spring решает эти проблемы
 ![](images/application_context.png)
+
 Есть *application*, внутри него есть *aplication context*. Spring создает все классы внутри aplication context и внедряет все необходимые зависимости (*dependency injection*), то есть у всех объектах есть ссылки на объекты, от которых они зависят.
 
 ## Важные идейные ремарки
