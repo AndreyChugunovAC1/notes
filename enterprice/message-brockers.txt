@@ -1,0 +1,48 @@
+release::jira-issues:
+  extends: .java::templates/jira::release-issues
+  stage: .post
+  variables:
+    GIT_DEPTH: 50
+    JIRA_TAG_PATTERN: "^release.*$"
+    JIRA_PUBLISH_RELEASE_NOTES: 'true'
+    JIRA_RELEASE_NOTES_FORMAT: 'custom_jira'
+    JIRA_RELEASE_NOTES_FILE: "release_notes.md"
+    JIRA_URL: "https://jira.tcsbank.ru"
+  rules:
+    - if: $DEPLOY_ONLY == "true"
+      when: never
+    - if: $CI_COMMIT_TAG =~ /release.*$/
+      allow_failure: true
+
+release::notify_notes:
+  extends:
+    - .time-notify-message
+  stage: .post
+  variables:
+    MOBILE_CI_IMAGE: 'docker-hosted.artifactory.tcsbank.ru/mobile-dev-platform/mobile-ci:release-0.5.1'
+    TIME_CHANNEL_ID: $RELEASE_ANNOUNCEMENT_CHANNEL_ID
+    TIME_BOT_AUTH_TOKEN: ${RELEASE_NOTIFICATION_BOT_AUTH_TOKEN}
+  before_script:
+    - TIME_MESSAGE_TEXT="$(cat $MESSAGE_FILE)"
+    - echo $TIME_MESSAGE_TEXT
+  needs:
+    - job: "release::jira-issues"
+      artifacts: true
+  rules:
+    - if: $RELEASE_ANNOUNCEMENT_CHANNEL_ID && $CI_COMMIT_TAG =~ /release.*$/
+      allow_failure: true
+    - when: never
+
+release::jira-issues:
+  rules:
+    - when: never
+
+release::notify_notes:
+  variables:
+    # Канал в Time ~acc-releases
+    TIME_CHANNEL_ID: nsxo7tjp1tntuqp8sfb9x3rhze
+    TIME_MESSAGE_TEXT: |
+      :obsidian: Obsidian зарелизил фичу: [${APPLICATION_NAME} ${APPLICATION_VERSION}](${CI_PROJECT_URL}/-/releases/${CI_COMMIT_TAG}) :tada:
+  before_script: [] # отключено, т.к. не используем release::jira-issues
+  needs: []         # отключено, т.к. не используем release::jira-issues
+
