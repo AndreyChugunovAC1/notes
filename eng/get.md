@@ -1,0 +1,35 @@
+# Phrases with get
+
+- **get impression**
+- **get the wrong end of the stick**
+- **get the chance**
+- **get the joke**
+- **get to know**
+- **get hold of** = to reach smb by phone
+- **get rid of** = remove smth from your life
+- **to get my own back on** smb = to take a revenge
+- **get into trouble with**
+- **get out of the way** = remove yourself from my route
+- **get real!** = request to be more realistic
+- **get a life** = start doing smth interesting instead of boring things!
+- **not getting anywhere with** smth = making no progress with smth
+- **to get on my nerves** = makes me nervous, annoys me
+- **need to get her/his act together** = need to be more efficent = взять себя в руки
+- **get on like a house in fire** = to have a very good relationship from the start (even if house is on fire)
+- **get a move on** = accelerate
+- **must be getting on a bit** = must be to getting older
+- **to never get the message** = not to understand hints (намеков)
+- **to get his/her/my own way** = to be urself despite circumstances/conditions
+- **get together** = first meet and then being together
+- **to get over** smth = to overcome and forget
+- **to get on with** smth = trying to be with (like trying to work, to sleep)
+- **get through to** = to convince (убедить) smb, because smb is stubborn (упертый)
+- **to get into** = to start learn or work woth smth
+- **to get around** place = to move around
+- **get away with** smth = to avoid punishment for smth (youll never get away with killing)
+- **to get by** = to stay alive
+- **to get behind** = отставать
+- **get smb down** = reduce happiness, 
+- **get out of** = to avoid smth = избежать
+- **get back to** smth = return to smth
+
