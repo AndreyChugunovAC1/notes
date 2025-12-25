@@ -54,7 +54,7 @@ $T$ - функция от выборки, такая, что при услови
 0. $T_1(\alpha) = \left(-\infty, q_{\alpha}\right]$ - левосторонняя, left-sided
 0. $T_0(\alpha) = \overline{T_1(\alpha)} = \left(q_{\frac{\alpha}{2}},q_{1-\frac{\alpha}{2}}\right)$ - двусторонняя, both-sided
 
-![alt text](images/critical-sections.png)
+![](images/critical-sections.png)
 
 ### p_value
 
@@ -91,4 +91,17 @@ $$p(\vec x)=P(U \text{ more in }T_1(\alpha)\text{ than }T(\vec x))$$
 **Состоятельность теста:** $\beta \rightarrow 0$ при $n \rightarrow \infty$.
 
 В общем случае, $\alpha$ и $\beta$ зависят друг от друга, при том обратно (меньше $\alpha$ - больше $\beta$).
+
+### Итог
+
+Полезные теоремы в кучу
+-
+
+$S_* = \frac{1}{n}\sum\limits_{k=0}^{n}(X_k-\overline X)^2$ - смещенная дисперсия (так получилось, что интуитивная формула подвела)
+
+$S = \frac{1}{n-1}\sum\limits_{k=0}^{n}(X_k-\overline X)^2 = \frac{n-1}{n}S_*$ - несмещенная дисперсия.
+
+**ЦПТ:** $\sqrt{n}(X - \overline X)\stackrel{\text d}{\rightarrow}\mathcal{N}(0,\sigma^2)$
+
+
 
