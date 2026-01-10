@@ -1,7 +1,4 @@
-# Математическая статистика
-
-Статистические тесты
--
+# Статистические тесты
 
 Общая идея в сравнении гипотез, а не прямом доказательстве (которое невозможно).
 
@@ -92,7 +89,89 @@ $$p(\vec x)=P(U \text{ more in }T_1(\alpha)\text{ than }T(\vec x))$$
 
 В общем случае, $\alpha$ и $\beta$ зависят друг от друга, при том обратно (меньше $\alpha$ - больше $\beta$).
 
-### Итог
+Статистические критерии
+-
+
+### Медиана и квантили
+- $H_0: \text{med} X = c$
+- $H_1: \text{med} X \neq c$
+
+$\text{med}X = q_{\frac 1 2}$
+
+Теорема из вариационных рядов:
+
+$$\sqrt{n} p(q_a)\frac{X_{[an]} - q_a}{\sqrt{a(1-a)}}\rightarrow\mathcal{N}(0,1)$$
+
+Тогда можно составить такую статистику критерия: 
+
+полагая $H_0$,
+
+$$T(X) = 2\sqrt{n}p(c_0)(X_{[\frac n 2]} - c_0)\rightarrow \mathcal{N}(0,1)$$
+
+### Нормальное распределение
+
+$X_1, ..., X_n \sim \mathcal{N}(\mu,\sigma^2)$, предполагается матожидание. $H_0: \mu = \mu_0$
+
+1. $\sigma$ - известна. Тогда 
+$$T(\vec X) = \sqrt{n}\frac{\overline X - \mu_0}{\sigma}\rightarrow \mathcal{N}(0,1)$$
+
+2. $\sigma$ - неизвестна. Тогда 
+$$T(\vec X) = \sqrt{n}\frac{\overline X - \mu_0}{S}\rightarrow T(n-1)$$
+
+**Робастность** -  устойчивость статистики критерия к изменению априорного предположения. 
+
+Здесь, если неверно $X \sim \mathcal{N}$, то это сильно влияет на $\sim T(n-1)$.
+
+$X_1, ..., X_n \sim \mathcal{N}(\mu,\sigma^2)$, хочется узнать дисперсию
+
+$H_0: \sigma = \sigma_0$
+
+$$\frac{nS_*^2}{\sigma_0^2} \sim \chi^2(n-1)$$
+
+Две выборки одинакого размера (парные)
+-
+
+### Равенство матожиданий 1
+$X_1,..,X_n$ и $Y_1,..,Y_n$ независимы, $H_0: \mu_X = \mu_Y$
+
+Тогда достаточно $U_i = X_i-Y_i$ и $H_0: \text{E}U = 0$
+
+### Равенство дисперсий для $\mathcal{N}$
+$X_1,..,X_n \sim \mathcal{N}(\mu_X, \sigma^2_X)$ и $Y_1,..,Y_n \sim \mathcal{N}(\mu_Y, \sigma^2_Y)$ независимы, $H_0: \sigma_X = \sigma_Y \Leftrightarrow \frac{\sigma_X^2}{\sigma_Y^2} = 1$
+ 
+$$F = \frac{nS_X^2(n-1)\sigma_Y^2}{\sigma_X^2(n-1)nS_Y^2} = \frac{S_X^2\sigma_Y^2}{\sigma_X^2S_Y^2}$$
+
+Далее понятно как, учитывая, что $F \sim \text{Fisher}(n,n)$, если я не ошибаюсь
+
+### Равенство матожиданий 2
+$X_1,...,X_n$ и $Y_1, ..., Y_m$, независимы, $n$ и $m$ достаточно большие. $H_0: \mu_X = \mu_Y$.
+
+$\overline X - \overline Y \approx \mathcal{N}(\mu_X - \mu_Y, \frac{\sigma_X^2}{n} +\frac{\sigma_Y^2}{m})$, то есть, полагая $H_0$:
+
+$$\frac{(\overline X - \overline Y) - (\mu_X - \mu_Y)}{\sqrt{\frac{S_X^2}{n} +\frac{S_Y^2}{m}}} = \frac{\overline X - \overline Y}{\sqrt{\frac{S_X^2}{n} +\frac{S_Y^2}{m}}} \rightarrow\mathcal{N}(0,1)$$
+
+**T-критерий**, **T-тест** - тест/критерий, использующий распределение Стьюдента.
+
+T-критерий Уэлча (Welch)
+-
+
+Дисперсии не равны и неизвестны. $X_1,...,X_n;Y_1,...,Y_m \sim \mathcal{N}(\mu,\sigma^2)$, независимы.
+
+$H_0: \mu_X = \mu_Y$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Полезные теоремы в кучу
 -
